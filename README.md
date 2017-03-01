@@ -33,9 +33,12 @@ CREATE DATABASE carmen;
 \i world.SQL
 ```
 
+**OR**
+
 **Pro Tip:** You can do this in one step with the command:
 
 ```bash
+createdb carmen
 psql -d carmen -f /your/path/to/this/file/starter-code/world.sql
 ```
 
@@ -69,15 +72,7 @@ Then, use the clues below to create the appropriate SQL queries to help you find
 ```
 
 
-#### Starter code
 
-Again, be sure to grab the .sql file from the [starter-code](starter-code/world.sql) and run it in your PostgreSQL terminal using the commands above.
-
-#### Deliverable
-
-Use the clues.sql file to write in the SQL queries that correspond with each clue and tell us where she's heading at the bottom:
-
-![](https://s3.postimg.org/8386vdt43/Screen_Shot_2015_07_08_at_8_11_25_PM.png">)
 
 
 ## Additional Resources
