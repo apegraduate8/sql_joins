@@ -5,7 +5,6 @@
 
 
 
-#### Where In The World Is Carmen Sandiego?
 
 We're going to use what we've learned already about searching with SQL commands, and apply it to chase down and capture an elusive and world-renowned thief, Carmen Sandiego. Follow the clues, use the interweb - write down both the SQL commands /queries you used and your answers to the clues - and figure out where Carmen's headed, so we can catch her and bring her in.
 
@@ -78,9 +77,7 @@ Again, be sure to grab the .sql file from the [starter-code](starter-code/world.
 
 Use the clues.sql file to write in the SQL queries that correspond with each clue and tell us where she's heading at the bottom:
 
-<p align="center">
-  <img src ="http://s3.postimg.org/8386vdt43/Screen_Shot_2015_07_08_at_8_11_25_PM.png">
-</p>
+![](http://s3.postimg.org/8386vdt43/Screen_Shot_2015_07_08_at_8_11_25_PM.png">)
 
 
 ## Additional Resources
