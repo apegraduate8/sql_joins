@@ -35,7 +35,7 @@ CREATE DATABASE carmen;
 
 **OR**
 
-**Pro Tip:** You can do this in one step with the command:
+**Pro Tip:** You can do this in one step with these commands.  _Note: this is done from the bash CLI and not the psql CLI_
 
 ```bash
 createdb carmen
