@@ -39,6 +39,7 @@ CREATE DATABASE carmen;
 
 ```bash
 createdb carmen
+
 psql -d carmen -f /your/path/to/this/file/starter-code/world.sql
 ```
 
