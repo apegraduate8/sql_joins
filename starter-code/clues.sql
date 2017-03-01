@@ -2,6 +2,9 @@
 -- traveling through Southern Europe. She's most likely traveling someplace where she won't be noticed,
 -- so find the least populated country in Southern Europe, and we'll start looking for her there.
 
+carmen= SELECT name FROM country WHERE region = "Southern Europe" ORDER BY population ASC; ---- Holy See (Vatican City State)
+
+
 
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in
@@ -10,28 +13,66 @@
 
 
 
+SELECT code FROM country WHERE name = 'Holy See (Vatican City State)'; ----  VAT
+SELECT "language" FROM countrylanguage WHERE countrycode = 'VAT'; ----  Italian
+
+
+
+
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on
 -- to a different country, a country where people speak only the language she was learning. Find out which
 --  nearby country speaks nothing but that language.
-
-
+SELECT countrycode FROM countryLanguage WHERE "language" = 'Italian' AND isofficial = 'true';
+ SELECT name FROM country JOIN countrylanguage ON country.code = countrylanguage.countrycode WHERE language = 'Italian' AND region = 'Southern Europe';
+ -------- Desie ROCKS !!!!!
 
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time.
  -- There are only two cities she could be flying to in the country. One is named the same as the country – that
  -- would be too obvious. We're following our gut on this one; find out what other city in that country she might
  --  be flying to.
-
+SELECT country.name, city.name FROM country JOIN city ON country.code = city.countrycode WHERE country.name =city.name AND country.name = 'Italy' OR country.name = 'San Marino' OR country.name = 'Holy See (Vatican City State)';
+             name              |         name
+-------------------------------+----------------------
+ San Marino                    | Serravalle
+ San Marino                    | San Marino
+ Holy See (Vatican City State) | Cittï¿½ del Vaticano
+(3 rows)
 
 
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar names, but in totally different
 -- parts of the globe! She's headed to South America as we speak; go find a city whose name is like the one we were
 -- headed to, but doesn't end the same. Find out the city, and do another search for what country it's in. Hurry!
-
-
+SELECT country.name, city.name FROM country JOIN city ON country.code = city.countrycode WHERE country.region = 'South America' AND city.name LIKE 'San%';
+SELECT country.name, city.name FROM country JOIN city ON country.code = city.countrycode WHERE country.region = 'South America' AND city.name LIKE 'San %';
+SELECT country.name, city.name FROM country JOIN city ON country.code = city.countrycode WHERE country.region = 'South America' AND city.name LIKE 'San M%';
+  name    |              name
+-----------+--------------------------------
+ Argentina | San Miguel de Tucumï¿½n
+ Argentina | San Isidro
+ Argentina | San Miguel
+ Argentina | San Salvador de Jujuy
+ Argentina | San Fernando
+ Argentina | San Fernando del Valle de Cata
+ Argentina | San Nicolï¿½s de los Arroyos
+ Argentina | San Juan
+ Argentina | San Luis
+ Argentina | San Rafael
+ Chile     | San Bernardo
+ Chile     | San Pedro de la Paz
+ Paraguay  | San Lorenzo
+ Venezuela | San Cristï¿½bal
+ Venezuela | San Fernando de Apure
+ Venezuela | San Felipe
+(16 rows)
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards
  -- the capital! Look up the country's capital, and get there pronto! Send us the name of where you're headed and we'll
  -- follow right behind you!
+SELECT country.name, city.name FROM country JOIN city ON country.code = city.countrycode WHERE country.region = 'South America' AND city.name = 'Santiago de Chile';
+ name  |       name
+-------+-------------------
+ Chile | Santiago de Chile
+(1 row)
 
 
 
@@ -52,6 +93,12 @@
 
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
 
+SELECT name FROM city WHERE population = 91084;
+carmen=# SELECT name FROM city WHERE population = 91084;
+     name
+--------------
+ Santa Monica
+(1 row)
 
 
 -- She's in ____________________________!
