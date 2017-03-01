@@ -1,18 +1,9 @@
----
-title: SQL Select
-type: lab
-duration: "1:25"
-creator:
-    name: Micah Rich
-    city: LA
-competencies: Databases
----
 
-# Use SQL to find Carmen Sandiego
+# Where in the World is...
 
-## Introduction
+![](https://i.giphy.com/13n8txR8c9UDHG.gif)
 
-> ***Note:*** _This can be a pair programming activity or done independently._
+
 
 #### Where In The World Is Carmen Sandiego?
 
