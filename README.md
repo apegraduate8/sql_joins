@@ -11,11 +11,16 @@ We're going to use what we've learned already about searching with SQL commands,
 
 ## Exercise
 
-#### Requirements
+#### Setup/Instructions:
 
-- Fork and clone the [starter-code](starter-code/world.sql)
-- Use the clues.sql file as your "answer sheet"
-- From the command line, let's create a new database called `carmen` and populate it with the SQL found in `world.sql`
+######starter code:
+- You've been given a `world.sql` file that you run to import a bunch of data into a SQL database (instructions below).
+- You've been given a `clues.sql` file that has clues for finding Carmen.  Read the clues and record your SQL queries in this file.
+
+
+######getting started:
+
+From the command line, create a new database called `carmen` and populate it with the SQL found in `world.sql`
 
 ```
 # Enter psql
